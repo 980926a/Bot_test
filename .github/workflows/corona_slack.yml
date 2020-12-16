@@ -1,0 +1,36 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: Python application
+
+on:
+  schedule:
+    - cron: 0 8 * * 1,2,3,4,5
+#       17분정도의 딜레이 발생 가능 
+#                                                
+#   push:
+#     branches: [ main ]
+#   pull_request:
+#     branches: [ main ]
+# 정해진 시간을 설정해서 그때 실행하도록 하자!
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install bs4 requests
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+   
+    - name: run
+      run: |
+        python corona.py
