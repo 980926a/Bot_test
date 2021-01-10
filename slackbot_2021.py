@@ -1,5 +1,4 @@
 import os
-import uuid
 import re
 import time
 from azure.storage.blob import BlobServiceClient, BlobClient, ContainerClient
