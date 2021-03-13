@@ -9,7 +9,7 @@ from pandas import json_normalize
 import requests
 
 # Token 문자열 변수 만들기
-# slack_token = ['xoxb-1616926072624-1578347075031-3UyDm9PYOoZnPoPB8yq42eJV']
+# slack_token = ['xoxb9PYOoZnPoPB8yq42eJV']
 
 # 채널 조회 API 메소드 : conversations.list
 ChannelName = "bot_test"
